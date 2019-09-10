@@ -1,5 +1,7 @@
-
 class Node():
+    """
+    节点类
+    """
     def __init__(self, alink = None, value = None):
         self._value = value
         self._next = alink
@@ -70,8 +72,8 @@ class mySingleLink():
         """
         if pos < 1:
             self.add(value)
-        elif pos > self._lenth:
-            self.append
+        elif pos >= self._lenth:
+            self.append(value)
         else:
             pre = self._head
             newNode = Node(value)
@@ -82,4 +84,44 @@ class mySingleLink():
             newNode.setNext(pre.getNext())
             pre.setNext(newNode)
             self._lenth += 1
+    
+    def search(self, pos):
+        """
+        查找函数
+        输入位置，返回该位置的节点
+        """
+        if pos < 1:
+            return self._head
+        elif pos >= self._lenth:
+            return self._tail
+        else:
+            tmp = 0
+            pre = self._head
+            while tmp < pos:
+                pre = pre.getNext()
+                tmp += 1
+            return pre
+    
+    def update(self ,pos ,value):
+        """
+        更新函数
+        输入位置，将位置节点值替换
+        """
+        if pos < 1:
+            self._head.setValue(value)
+        elif pos >= self._lenth:
+            self._tail.setValue(value)
+        else:
+            tmp = 0
+            pre = self._head
+            while tmp < pos:
+                pre = pre.getNext()
+                tmp += 1
+            pre.setValue(value)
 
+link1 = mySingleLink()
+print(link1.isEmpty())
+link1.add(123)
+link1.insert(1,12345)
+link1.append(9877)
+print(link1.search(1))
