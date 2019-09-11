@@ -112,7 +112,7 @@
 
 ### 优化
 
-- 如果数列的最大值为99，最小值为90，那么开辟一个长度为100的数组造成空间浪费
+- 如果数列的最大值为99，最小值为90，那么开辟一个长度为100的数组造成空间浪费![countSort1](https://raw.githubusercontent.com/skypeee/python-learning/master/排序算法/image/countSort5.png)
 - 以数列最大值-数列最小值+1最为数组的长度
 - 对应下标为数据-最小值
 
