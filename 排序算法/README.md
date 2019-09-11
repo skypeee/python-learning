@@ -105,10 +105,10 @@
 
 ### 思路
 
-- 取值范围为0~10之间的一组数据，进行快速地对数据排序![countSort](.\image\countSort.png)
-- 创建一个长度为数据最大值加一（11）的数组，值全为0![countSort2](.\image\countSort2.png)
-- 将数据与数组下标对应，将值加一，统计出来的数组即为![countSort3](.\image\countSort3.png)
-- 遍历数组，值为几就等同于此下标对应的数据出现过几次![countSort4](.\image\countSort4.png)
+- 取值范围为0~10之间的一组数据，进行快速地对数据排序![countSort1](https://raw.githubusercontent.com/skypeee/python-learning/master/排序算法/image/countSort.png)
+- 创建一个长度为数据最大值加一（11）的数组，值全为0![countSort2](https://raw.githubusercontent.com/skypeee/python-learning/master/排序算法/image/countSort2.png)
+- 将数据与数组下标对应，将值加一，统计出来的数组即为![countSort3](https://raw.githubusercontent.com/skypeee/python-learning/master/排序算法/image/countSort3.png)
+- 遍历数组，值为几就等同于此下标对应的数据出现过几次![countSort4](https://raw.githubusercontent.com/skypeee/python-learning/master/排序算法/image/countSort4.png)
 
 ### 优化
 
