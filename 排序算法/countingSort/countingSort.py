@@ -31,6 +31,14 @@ def countingSort(alist):
     for j in range(len(countingList)):
         countingList[j] += tmp
         tmp = countingList[j]
-    print(countingList)
-    return countingList
+    result = []
+    for i in range(len(countingList)):
+        if i == 0:
+            for j in range(countingList[i]):
+                result.append(minNumber)
+        else:
+            for j in range(countingList[i] - countingList[i-1]):
+                result.append(minNumber+i)
+    return result
 countingSort([1,6,3,3,5,7,9,2,2,3,5,6,7,8,1,2,3,4,6,8,9])
+print(countingSort([1,6,5,7,9,2,2,5,6,7,8,1,2,4,6,8,9]))

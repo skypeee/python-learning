@@ -25,9 +25,15 @@
 
 ### 思路
 
-- 把相邻的元素两两比较
+- 把相邻的元素两两比较![bubbleSort](https://raw.githubusercontent.com/skypeee/python-learning/master/排序算法/image/bubbleSort.png)
+
 - 当一个元素大于右侧相邻元素时，交换他们的位置
+
 - 当元素小于等于右侧相邻元素时，位置不变
+
+  ![冒泡排序第一趟](https://raw.githubusercontent.com/skypeee/python-learning/master/排序算法/image/冒泡排序第一趟.png)
+
+  ![冒泡排序第二趟](https://raw.githubusercontent.com/skypeee/python-learning/master/排序算法/image/冒泡排序第二趟.png)
 
 ### 时间复杂度为O(n²)
 
@@ -35,11 +41,22 @@
 
 - 第一版
   - 当进行过若干次排序后已经成为有序数列，但是还是会继续进行直到最后一次循环
+  
   - 我们可以做一个标记，当数列已经有序列则后面循环不必执行
+  
+    ![冒泡排序第一次优化1](https://raw.githubusercontent.com/skypeee/python-learning/master/排序算法/image/冒泡排序第一次优化.png)
 - 第二版
   - 如果列表后半部分已经是有序的，那么在每一轮还是会一次进行对比
+  
   - 在每一轮排序后记录下最后一次元素交换的位置
+  
   - 该位置即为无序列表的边界，再往后就是有序区
+  
+    ![冒泡排序第二次优化1](https://raw.githubusercontent.com/skypeee/python-learning/master/排序算法/image/冒泡排序第二次优化1.png)
+  
+    ![冒泡排序第一次优化2](https://raw.githubusercontent.com/skypeee/python-learning/master/排序算法/image/冒泡排序第二次优化2.png)
+  
+    ![冒泡排序第一次优化3](https://raw.githubusercontent.com/skypeee/python-learning/master/排序算法/image/冒泡排序第二次优化3.png)
 - 鸡尾酒排序
   - 元素比较和交换是双向的
   - 第一躺从左到右、第二趟从右到左
