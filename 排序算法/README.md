@@ -1,5 +1,3 @@
-
-
 # 排序算法
 
 - 按时间复杂度划分
@@ -25,7 +23,9 @@
 
 ### 思路
 
-- 把相邻的元素两两比较![bubbleSort](https://raw.githubusercontent.com/skypeee/python-learning/master/排序算法/image/bubbleSort.png)
+- 把相邻的元素两两比较
+
+  ![bubbleSort](https://raw.githubusercontent.com/skypeee/python-learning/master/排序算法/image/bubbleSort.png)
 
 - 当一个元素大于右侧相邻元素时，交换他们的位置
 
@@ -56,13 +56,15 @@
   
     ![冒泡排序第一次优化2](https://raw.githubusercontent.com/skypeee/python-learning/master/排序算法/image/冒泡排序第二次优化2.png)
   
-    ![冒泡排序第一次优化3](https://raw.githubusercontent.com/skypeee/python-learning/master/排序算法/image/冒泡排序第二次优化3.png)
+    ![冒泡排序第二次优化3](https://raw.githubusercontent.com/skypeee/python-learning/master/排序算法/image/冒泡排序第二次优化3.png)
 - 鸡尾酒排序
   - 元素比较和交换是双向的
   - 第一躺从左到右、第二趟从右到左
   - 能在特定的条件下减少排序回合数
   - 代码量多
   - 大部分元素有序的情况下合适
+
+![冒泡排序第二次优化3](https://raw.githubusercontent.com/skypeee/python-learning/master/排序算法/image/鸡尾酒排序.png)
 
 ## 快速排序
 
