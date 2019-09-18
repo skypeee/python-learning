@@ -90,12 +90,20 @@
 - 当第二次循环重新切入right寻找
 - 当left与right碰头时停止，将基准元素插入中间
 
+![快速排序双边循环1](https://raw.githubusercontent.com/skypeee/python-learning/master/排序算法/image/quickSort3.png)
+
+![快速排序双边循环2](https://raw.githubusercontent.com/skypeee/python-learning/master/排序算法/image/quickSort4.png)
+
 #### 单边循环法
 
 - 需要一个mark指针指向起始位置，代表小于基准元素的边界
 - 如果找到大于基准元素的值，继续往后遍历
 - 如果找到小于基准元素的值，则将mark指针后移一位，并将该元素与mark指向的值替换
 - 循环结束后将基准元素插入到mark元素与基准元素交换
+
+![快速排序单边循环1](https://raw.githubusercontent.com/skypeee/python-learning/master/排序算法/image/quickSort1.png)
+
+![快速排序单边循环2](https://raw.githubusercontent.com/skypeee/python-learning/master/排序算法/image/quickSort2.png)
 
 #### 非递归实现
 
@@ -174,4 +182,4 @@
 
 - 遍历所有的桶，依次输出元素
 
-  
+![桶排序](https://raw.githubusercontent.com/skypeee/python-learning/master/排序算法/image/桶排序.png)

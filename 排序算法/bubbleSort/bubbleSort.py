@@ -11,7 +11,7 @@ def bubble(alist):
                 alist[j], alist[j+1] = alist[j+1], alist[j]
     return alist
 
-print(bubble([5,1,3,7,9]))
+# print(bubble([5,1,3,7,9]))
 
 # 第一次优化
 def bubble1(alist):
@@ -25,15 +25,15 @@ def bubble1(alist):
             return alist
     return alist
 
-print(bubble1([7,8,6,5,4,3,2,1]))
+# print(bubble1([7,8,6,5,4,3,2,1]))
 
 # 第二次优化
 def bubble2(alist):
     position = len(alist)-1
     for i in range(len(alist)-1, 0, -1):
+        print("alist:", alist)
         isChanged = False
         for j in range(position):
-            print(j)
             if alist[j] < alist[j+1]:
                 alist[j] , alist[j+1] = alist[j+1], alist[j]
                 isChanged = True
