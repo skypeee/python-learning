@@ -66,6 +66,28 @@
 
 ![冒泡排序第二次优化3](https://raw.githubusercontent.com/skypeee/python-learning/master/排序算法/image/鸡尾酒排序.png)
 
+## 选择排序
+
+### 思路
+
+- 找到数组中最小的数字
+- 将它和数组的第一个位置交换位置
+- 在剩余元素中找到最小的元素，将它与第二个元素交换位置
+- 依次重复
+
+![选择排序](https://raw.githubusercontent.com/skypeee/python-learning/master/排序算法/image/selectionSort.png)
+
+## 插入排序
+
+### 思路
+
+- 类似整理手中的扑克牌，将每一张牌插入到已经排好序的牌中的适当位置
+- 首先拿出数组中的第一个数
+- 遍历数组，依次拿出数组中第二个到最后一个值
+- 从后向前遍历已经排序好的数组，将拿出的数组插入到正确的位置
+
+![插入排序](https://raw.githubusercontent.com/skypeee/python-learning/master/排序算法/image/insertionSort.png)
+
 ## 快速排序
 
 ### 思路
