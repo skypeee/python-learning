@@ -14,10 +14,6 @@
     - 计数排序
     - 桶排序
     - 基数排序
-- 按稳定性划分
-  - 稳定排序
-    - 冒泡排序
-  - 不稳定排序
 
 ## 冒泡排序
 
@@ -35,7 +31,11 @@
 
   ![冒泡排序第二趟](https://raw.githubusercontent.com/skypeee/python-learning/master/排序算法/image/冒泡排序第二趟.png)
 
-### 时间复杂度为O(n²)
+### 属性
+
+- 最差情况时间复杂度O（n²）
+- 最佳情况时间复杂度O（n）
+- 平均时间复杂度O（n²）
 
 ### 优化
 
@@ -63,30 +63,78 @@
   - 能在特定的条件下减少排序回合数
   - 代码量多
   - 大部分元素有序的情况下合适
-
-![冒泡排序第二次优化3](https://raw.githubusercontent.com/skypeee/python-learning/master/排序算法/image/鸡尾酒排序.png)
+  
+    ![冒泡排序第二次优化3](https://raw.githubusercontent.com/skypeee/python-learning/master/排序算法/image/鸡尾酒排序.png)
 
 ## 选择排序
 
 ### 思路
 
 - 找到数组中最小的数字
+
 - 将它和数组的第一个位置交换位置
+
 - 在剩余元素中找到最小的元素，将它与第二个元素交换位置
+
 - 依次重复
 
-![选择排序](https://raw.githubusercontent.com/skypeee/python-learning/master/排序算法/image/selectionSort.png)
+  ![选择排序](https://raw.githubusercontent.com/skypeee/python-learning/master/排序算法/image/selectionSort.png)
+
+### 属性
+
+- 最差时间复杂度O（n²）
+- 最佳时间复杂度O（n²）
+- 平均时间复杂度O（n²）
 
 ## 插入排序
 
 ### 思路
 
 - 类似整理手中的扑克牌，将每一张牌插入到已经排好序的牌中的适当位置
+
 - 首先拿出数组中的第一个数
+
 - 遍历数组，依次拿出数组中第二个到最后一个值
+
 - 从后向前遍历已经排序好的数组，将拿出的数组插入到正确的位置
 
-![插入排序](https://raw.githubusercontent.com/skypeee/python-learning/master/排序算法/image/insertionSort.png)
+  ![插入排序](https://raw.githubusercontent.com/skypeee/python-learning/master/排序算法/image/insertionSort.png)
+
+### 属性
+
+- 最差的时间复杂度O（n²）
+- 最佳的时间复杂度O（n）
+- 平均时间复杂度O（n²）
+
+### 说明
+
+- 插入排序在小规模数据或者数据基本有序的情况下高效
+
+## 希尔排序
+
+### 思路
+
+- 使数组中任意间隔为h的元素都是有序的
+
+1. 首先选择增量h为数组长度除2取整
+
+2. 数组中每隔h个数字为一组，进行排序
+
+3. 对增量依次除2取整进行排序
+
+4. 当最终增量为1时进行插入排序
+
+   ![插入排序](https://raw.githubusercontent.com/skypeee/python-learning/master/排序算法/image/shellSort.png)
+
+### 属性
+
+- 最差时间复杂度O（n log² n）
+- 最佳时间复杂度O（n log n）
+- 平均表现取决于差序序列
+
+### 说明
+
+- 希尔排序在数据规模较大并且无序情况下也能保持高效
 
 ## 快速排序
 
@@ -112,9 +160,9 @@
 - 当第二次循环重新切入right寻找
 - 当left与right碰头时停止，将基准元素插入中间
 
-![快速排序双边循环1](https://raw.githubusercontent.com/skypeee/python-learning/master/排序算法/image/quickSort3.png)
+  ![快速排序双边循环1](https://raw.githubusercontent.com/skypeee/python-learning/master/排序算法/image/quickSort3.png)
 
-![快速排序双边循环2](https://raw.githubusercontent.com/skypeee/python-learning/master/排序算法/image/quickSort4.png)
+  ![快速排序双边循环2](https://raw.githubusercontent.com/skypeee/python-learning/master/排序算法/image/quickSort4.png)
 
 #### 单边循环法
 
@@ -123,13 +171,19 @@
 - 如果找到小于基准元素的值，则将mark指针后移一位，并将该元素与mark指向的值替换
 - 循环结束后将基准元素插入到mark元素与基准元素交换
 
-![快速排序单边循环1](https://raw.githubusercontent.com/skypeee/python-learning/master/排序算法/image/quickSort1.png)
+  ![快速排序单边循环1](https://raw.githubusercontent.com/skypeee/python-learning/master/排序算法/image/quickSort1.png)
 
-![快速排序单边循环2](https://raw.githubusercontent.com/skypeee/python-learning/master/排序算法/image/quickSort2.png)
+  ![快速排序单边循环2](https://raw.githubusercontent.com/skypeee/python-learning/master/排序算法/image/quickSort2.png)
 
 #### 非递归实现
 
 - 可以将原本的递归实现转化成一个栈的实现
+
+### 属性
+
+- 最差时间复杂度O（n²）
+- 最佳时间复杂度为O（n）或者O（n log n）
+- 平均时间复杂度O（n log n）
 
 ## 堆排序
 
@@ -149,6 +203,12 @@
 - 堆排序的最坏时间复杂度稳定在O(n log n)
 - 快速排序递归和非递归方法的平均空间复杂度是O(log n)
 - 堆排序的空间复杂度是O(1)
+
+### 属性
+
+- 最差间复杂度O（n log n）
+- 最佳时间复杂度O（n log n）
+- 平均时间复杂度O （n log n）
 
 ## 计数排序
 
@@ -204,4 +264,10 @@
 
 - 遍历所有的桶，依次输出元素
 
-![桶排序](https://raw.githubusercontent.com/skypeee/python-learning/master/排序算法/image/桶排序.png)
+  ![桶排序](https://raw.githubusercontent.com/skypeee/python-learning/master/排序算法/image/桶排序.png)
+
+### 属性
+
+-  最差时间复杂度O（n²）
+- 最佳时间复杂度O（n）
+- 平均时间复杂度O（n²）
