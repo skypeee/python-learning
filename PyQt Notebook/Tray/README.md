@@ -2,17 +2,45 @@
 
 ## 使用到的包
 
-1. QtWidgets.Qwidget、QtWidgets.QsystemTrayIcon、QtWidgets.QMenu
+1. QtWidgets.Qwidget、QtWidgets.QsystemTrayIcon、QtWidgets.QMenu、QtWidgets.QAction、QtWidgets.QApplication
 2. QtGui.Qicon、QtGui.QColor、QtGui.QPixmap
 3. sys
 
 ## 步骤
 
 1. 创建PyQt基本套路
+
 2. 创建QSystemTrayIcon托盘对象
+
+   ```python
+   self.tray = QSystemTrayIcon()
+   ```
+
 3. 创建QIcon对象，将其设置为Tray（托盘）图标
+
+   ```python
+   self.trayIconPix = QPixmap(16,16)
+   self.trayIconPix.fill(QColor(100,100,100))
+   self.Icon = QIcon(self.trayIconPix)
+   self.tray.setIcon(self.Icon)
+   ```
+
 4. 创建QMenu（菜单）对象，创建QAction（行为）对象，将QAction（行为）对象添加至QMenu（菜单）对象中，相当于绑定点击事件
+
+   ```python
+   showAction = QAction("&Show", self, triggered = self.Show)
+   quitAction = QAction("&Quit", self, triggered = self.Exit)
+   self.trayMenu = QMenu(self)
+   self.trayMenu.addAction(showAction)
+   self.trayMenu.addSeparator()
+   self.trayMenu.addAction(quitAction)
+   ```
+
 5. 将QMenu（菜单）对象设置到右键触发（setContextMenu）事件中
+
+   ```python
+   self.tray.setContextMenu(self.trayMenu)
+   ```
 
 ## 问题
 
@@ -39,7 +67,6 @@ class TaryWiondw(QWidget):
 
         # 设置托盘图标（QIcon图标过大或者出错会导致托盘显示不出来）
         self.tray.setIcon(self.Icon)
-        self.tray.setVisible(False)
 
         # 创建QAction
         showAction = QAction("&Show", self, triggered = self.Show)
@@ -61,8 +88,6 @@ class TaryWiondw(QWidget):
 
     def Show(self):
         self.show()
-
-
 
 if __name__ == "__main__":
     app = QApplication(sys.argv)
